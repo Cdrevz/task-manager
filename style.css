@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f4f9;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#task-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    user-select: none;
+}
+
+#task-list li.dragging {
+    opacity: 0.5;
+    background: #e9e9e9;
+}
+#task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+.tag {
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+.work {
+    background: #ffdd57;
+}
+
+.personal {
+    background: #48c774;
+    color: white;
+}
+
+.shopping {
+    background: #3273dc;
+    color: white;
+}
+.priority-high {
+  border-left: 4px solid #ff3860; /* Red */
+}
+
+.priority-medium {
+  border-left: 4px solid #ffdd57; /* Yellow */
+}
+
+.priority-low {
+  border-left: 4px solid #48c774; /* Green */
+}
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .container {
+  background: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #task-list li {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+body.dark-mode #task-input,
+body.dark-mode #due-date,
+body.dark-mode #category,
+body.dark-mode #priority {
+  background: #333;
+  color: white;
+  border-color: #555;
+}
+#task-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+#task-form > * {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  #task-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #task-form #task-input {
+    grid-column: span 2;
+  }
+  
+  #task-form button[type="submit"] {
+    grid-column: span 2;
+  }
+}
